@@ -1,0 +1,18 @@
+// Copyright 2019 The Android Open Source Project
+
+//##########################################################################
+// Build ext2sparse
+
+cc_binary {
+    name: "ext2sparse",
+    host_supported: true,
+    defaults: ["e2fsprogs-defaults"],
+
+    srcs: ["ext2sparse.c"],
+    shared_libs: [
+        "libext2fs",
+        "libext2_com_err",
+        "libsparse",
+        "libz",
+    ],
+}
